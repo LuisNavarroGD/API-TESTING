@@ -1,15 +1,14 @@
-package Utility;
+package RestAssured;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import io.restassured.RestAssured;
-import org.testng.annotations.BeforeClass;
 
 public class Base {
     private String apikey;
     private String token;
     private String baseURL;
 
-    @BeforeClass
+
     public void setup(){
         Dotenv dotenv = Dotenv.load();
 
@@ -18,7 +17,7 @@ public class Base {
         this.token = dotenv.get("TRELLO_TOKEN");
 
         //Configurar restAssure
-        this.baseURL = "https://api.trello.com/1";
+        this.baseURL = dotenv.get("URL");
         RestAssured.baseURI = baseURL;
     }
 

@@ -1,16 +1,18 @@
+package TestNG;
+
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class BuildRequest extends Utility.BuildRequest {
+public class BuildRequest extends RestAssured.BuildRequest {
 
-    private Utility.BuildRequest buildRequest;
+    private RestAssured.BuildRequest buildRequest;
     private Response response;
 
     @BeforeClass
     public void setup() {
-        buildRequest = new Utility.BuildRequest();
+        buildRequest = new RestAssured.BuildRequest();
         buildRequest.setup();
         response = buildRequest.buildRequest();
     }
@@ -20,8 +22,6 @@ public class BuildRequest extends Utility.BuildRequest {
         Assert.assertEquals(response.getStatusCode(), 200, "Response code should be 200");
         Assert.assertEquals(response.getContentType(),
                 "application/json; charset=utf-8", "Content type should be application/json");
-
-
     }
 
     @Test

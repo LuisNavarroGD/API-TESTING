@@ -1,4 +1,4 @@
-package Utility;
+package RestAssured;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -12,7 +12,7 @@ public class DeleteAllBoards extends BuildRequest {
         return RestAssured.given()
                 .queryParam("key", getApikey())
                 .queryParam("token", getToken())
-                .get(getBaseURL() + "/members/me/boards");
+                .get(getBaseURL() + "members/me/boards");
     }
 
     // Método para extraer los IDs de los tableros desde la respuesta
@@ -30,7 +30,7 @@ public class DeleteAllBoards extends BuildRequest {
             RestAssured.given()
                     .queryParam("key", deleteAllBoards.getApikey())
                     .queryParam("token", deleteAllBoards.getToken())
-                    .delete(deleteAllBoards.getBaseURL() + "/boards/" + id);
+                    .delete(deleteAllBoards.getBaseURL() + "boards/" + id);
 
             System.out.println("Tablero con ID " + id + " eliminado.");
         }

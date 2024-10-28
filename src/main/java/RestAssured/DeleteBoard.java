@@ -1,4 +1,4 @@
-package Utility;
+package RestAssured;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -8,7 +8,7 @@ public class DeleteBoard extends UpdateBoard{
         return RestAssured.given()
                 .queryParam("key", getApikey())
                 .queryParam("token", getToken())
-                .delete(getBaseURL() + "/boards/" + boardID);
+                .delete(getBaseURL() + "boards/" + boardID);
     }
 
     public static void main (String [] args){
@@ -19,6 +19,7 @@ public class DeleteBoard extends UpdateBoard{
 
         System.out.println("Respuesta JSON: ");
         response.prettyPrint();
+        System.out.println("\n El nombre del tablero borrado es: " + deleteBoard.boardName);
         System.out.println("\n Se ha borrado el tablero con el siguiente ID: " + deleteBoard.boardID);
         System.out.println("\n El código de estado es: " + response.getStatusCode());
     }
