@@ -31,7 +31,5 @@ public class GetBoard extends CreateBoard {
         } else {
             System.out.println("No se pudo obtener la información del tablero.");
         }
-
     }
-
 }

@@ -26,7 +26,5 @@ public class DeleteBoard extends RestAssured.DeleteBoard {
         //Value del JSON body
         String valueField = response.jsonPath().getString("_value");
         Assert.assertNull(valueField, "El campo deberia de ser null");
-
     }
-
 }

@@ -2,9 +2,6 @@ package OkHttp;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-
-import java.io.IOException;
 
 public class Base {
     private String apikey;

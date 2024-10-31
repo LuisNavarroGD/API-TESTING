@@ -28,7 +28,6 @@ public class CreateBoard extends Base {
         );
     }
 
-
     // Clase para mapear la respuesta
     public static class BoardResponse {
         private String id;
@@ -110,6 +109,7 @@ public class CreateBoard extends Base {
 
     // Método para imprimir información de la respuesta
     private void printResponseInfo(BoardResponse boardResponse) {
+        System.out.println("Respuesta del tablero creado: ");
         System.out.println("ID del tablero: " + boardResponse.getId());
         System.out.println("Nombre del tablero: " + boardResponse.getName());
     }

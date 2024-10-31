@@ -1,6 +1,8 @@
 package PojoClasses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 public class BoardPojo {
 
@@ -56,7 +58,26 @@ public class BoardPojo {
     }
 
     public static void main (String[] args) {
-        System.out.println();
+
+        String json = "{\n" +
+                "    \"id\": \"657e6d8e7d8e7d8e7d8e7d8e\",\n" +
+                "    \"fullName\": \"Luis Mario\",\n" +
+                "    \"username\": \"xluismariox\",\n" +
+                "    \"email\": \"xluismariox@gmail.com\",\n" +
+                "    \"url\": \"https://trello.com/xluismariox\"\n" +
+                "}";
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            BoardPojo boardPojo = objectMapper.readValue(json, BoardPojo.class);
+            System.out.println("ID: " + boardPojo.getId());
+            System.out.println("Nombre: " + boardPojo.getName());
+            System.out.println("Usuario: " + boardPojo.getUsername());
+            System.out.println("Correo: " + boardPojo.getEmail());
+            System.out.println("URL: " + boardPojo.getUrl());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

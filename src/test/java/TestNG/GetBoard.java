@@ -25,6 +25,6 @@ public class GetBoard extends RestAssured.GetBoard {
         Assert.assertEquals(response.getHeader("Content-Type"),"application/json; charset=utf-8", "El content type deberia ser JSON");
         Assert.assertEquals(getBoard.boardID, response.jsonPath().getString("id"), "El id del tablero deberia ser: " + getBoard.boardID);
         Assert.assertEquals(getBoard.boardName, response.jsonPath().getString("name"), "El nombre del tablero deberia ser: " + NOMBRE_TABLERO);
-        Assert.assertEquals(getBoard.boardDesc, response.jsonPath().getString("desc"), "La descripcion del tablero deberia ser: " + DESCRIPCION_TABLERO);
+        Assert.assertEquals(DESCRIPCION_TABLERO, response.jsonPath().getString("desc"), "La descripcion del tablero deberia ser: " + DESCRIPCION_TABLERO);
     }
 }
