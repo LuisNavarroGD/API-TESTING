@@ -26,13 +26,13 @@ public class BuildRequest extends RestAssured.BuildRequest {
 
     @Test
     public void testResponseBody() {
-        assertThat(response.jsonPath().getString("url")).isNotNull();
-       assertThat(response.jsonPath().getString("id")).as("El id no debe de ser nulo").isNotNull();
-       assertThat(response.jsonPath().getString("avatarUrl")).isNotNull();
-       assertThat(response.jsonPath().getString("fullName")).isNotNull();
-       assertThat(response.jsonPath().getString("username")).isNotNull();
-       assertThat(response.jsonPath().getString("email")).isNotNull();
-        assertThat(response.jsonPath().getString("memberType")).isNotNull();
+        assertThat(response.jsonPath().getString("url")).isEqualTo("https://trello.com/xluismariox");
+       assertThat(response.jsonPath().getString("id")).isEqualTo("67118192ff4092dd2f7cf1ab");
+       assertThat(response.jsonPath().getString("avatarUrl")).isEqualTo("https://trello-members.s3.amazonaws.com/67118192ff4092dd2f7cf1ab/084ea27631e695e2db6de1dd0dd52b1a");
+       assertThat(response.jsonPath().getString("fullName")).isEqualTo("Luis Mario");
+       assertThat(response.jsonPath().getString("username")).isEqualTo("xluismariox");
+       assertThat(response.jsonPath().getString("email")).isEqualTo("xluismariox@gmail.com");
+        assertThat(response.jsonPath().getString("memberType")).isEqualTo("normal");
     }
 
     @Test

@@ -20,7 +20,11 @@ public class CreateBoard extends Base {
                 .queryParam("token", getToken())
                 .queryParam("name", NOMBRE_TABLERO)
                 .queryParam("desc", DESCRIPCION_TABLERO)
-                .post(getBaseURL() + "boards/");
+                .post(getBaseURL() + "boards/")
+                .then()
+                .extract()
+                .response();
+
 
         if (response.getStatusCode() == 200) {
             boardID = response.jsonPath().getString("id");

@@ -46,6 +46,4 @@ public class GetBoard extends CreateBoard{
             throw new RuntimeException(e);
         }
     }
-
-
 }

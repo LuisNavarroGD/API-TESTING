@@ -14,6 +14,8 @@ public class GetBoard extends RestAssured.GetBoard {
         getBoard.setup();
     }
 
+
+
     @Test
     public void testGetBoard(){
         Response response = getBoard.response();

@@ -40,6 +40,4 @@ public class Base {
         System.out.println("URL: " + base.baseURL);
         System.out.println("CLIENT: " + base.client);
     }
-
-
 }

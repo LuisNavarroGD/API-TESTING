@@ -52,7 +52,5 @@ public class BuildRequest extends Base {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 }

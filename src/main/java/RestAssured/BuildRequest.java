@@ -13,6 +13,11 @@ public class BuildRequest extends Base {
                 .get(getBaseURL() + "members/me");
     }
 
+    public String IdRequest(){
+        Response response = buildRequest();
+        return response.jsonPath().getString("id");
+    }
+
     public static void main(String[]args){
         BuildRequest buildRequest = new BuildRequest();
 
@@ -29,8 +34,6 @@ public class BuildRequest extends Base {
         System.out.println("El nombre completo de usuario es: " + response.jsonPath().getString("fullName"));
         System.out.println("El nombre de usuario es: " + response.jsonPath().getString("username"));
         System.out.println("El tipo de usuario es: " + response.jsonPath().getString("memberType"));
-        System.out.println("El código de estado es: " + response.getStatusCode());
 
     }
-
 }

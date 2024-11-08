@@ -1,10 +1,10 @@
 package PojoClasses;
 
+import RestAssured.BuildRequest;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-public class BoardPojo {
+public class BoardPojo extends BuildRequest {
 
     private String id;
     private String name;
@@ -59,8 +59,12 @@ public class BoardPojo {
 
     public static void main (String[] args) {
 
+        BuildRequest buildRequest = new BuildRequest();
+        buildRequest.setup();
+        buildRequest.IdRequest();
+
         String json = "{\n" +
-                "    \"id\": \"657e6d8e7d8e7d8e7d8e7d8e\",\n" +
+                "    \"id\": \""  + buildRequest.IdRequest() + "\",\n" +
                 "    \"fullName\": \"Luis Mario\",\n" +
                 "    \"username\": \"xluismariox\",\n" +
                 "    \"email\": \"xluismariox@gmail.com\",\n" +

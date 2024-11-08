@@ -26,13 +26,14 @@ public class BuildRequest extends RestAssured.BuildRequest {
 
     @Test
     public void testResponseBody() {
-        Assert.assertNotNull(response.jsonPath().getString("id"), "El id no debe ser nulo");
-        Assert.assertNotNull(response.jsonPath().getString("avatarUrl"), "El avatar no debe ser nulo");
-        Assert.assertNotNull(response.jsonPath().getString("url"), "La URL no debe ser nula");
-        Assert.assertNotNull(response.jsonPath().getString("email"), "El correo no debe ser nulo");
-        Assert.assertNotNull(response.jsonPath().getString("fullName"), "El nombre completo no debe ser nulo");
-        Assert.assertNotNull(response.jsonPath().getString("username"), "El nombre de usuario no debe ser nulo");
-        Assert.assertNotNull(response.jsonPath().getString("memberType"), "El tipo de usuario no debe ser nulo");
+        Assert.assertEquals(response.jsonPath().getString("id"), "67118192ff4092dd2f7cf1ab", "El id no coincide");
+        Assert.assertEquals(response.jsonPath().getString("avatarUrl"),
+                "https://trello-members.s3.amazonaws.com/67118192ff4092dd2f7cf1ab/084ea27631e695e2db6de1dd0dd52b1a", "El avatar no coincide");
+        Assert.assertEquals(response.jsonPath().getString("url"), "https://trello.com/xluismariox", "La url no coincide");
+        Assert.assertEquals(response.jsonPath().getString("email"), "xluismariox@gmail.com", "El email no coincide");
+        Assert.assertEquals(response.jsonPath().getString("fullName"), "Luis Mario", "El nombre no coincide");
+        Assert.assertEquals(response.jsonPath().getString("username"), "xluismariox", "El username no coincide");
+        Assert.assertEquals(response.jsonPath().getString("memberType"), "normal", "El tipo de miembro no coincide");
     }
 
     @Test
